@@ -1,6 +1,9 @@
+![](https://github.com/Phenomenon2919/SimpleMonetaryTracker/workflows/CI/badge.svg?branch=master&event=push)
+![](https://img.shields.io/github/release/Phenomenon2919/SimpleMonetaryTracker.svg)
+
 # Simple Monetary Tracker
 
-A simple desktop application to keep track of your income expenditure tally.
+A simple windows desktop application to keep track of your income expenditure tally.
 
 - Update transactions with one command.
 - Supports multi profile system.
@@ -15,3 +18,5 @@ A simple desktop application to keep track of your income expenditure tally.
         SimpleMonetaryTracker (<amount>) (-E|-I) (<tag>) [<description>]
 
 Note: _-I_ denotes Income and _-E_ denotes Expense.
+
+**Use 'bash' shell in windows for best experience**
