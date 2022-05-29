@@ -7,7 +7,7 @@ A simple windows desktop application to keep track of your income expenditure ta
 
 - Update transactions with one command.
 - Supports multi profile system.
-- View records with filters based on tags
+- View records with filters based on tags.
 
 ## Usage
 
