@@ -11,11 +11,12 @@ A simple windows desktop application to keep track of your income expenditure ta
 
 ## Usage
 
-        SimpleMonetaryTracker init (<Profile_name>)
-        SimpleMonetaryTracker set (<Profile_name>)
-        SimpleMonetaryTracker profiles
-        SimpleMonetaryTracker view [-E|-I] [<tag>...]
-        SimpleMonetaryTracker (<amount>) (-E|-I) (<tag>) [<description>]
+        SimpleMonetaryTracker init (<Profile_name>)             # Initialise a Profile on a machine
+        SimpleMonetaryTracker set (<Profile_name>)              # Set a Profile on a machine
+        SimpleMonetaryTracker profiles                          # List the profiles on a machine
+        SimpleMonetaryTracker tags                              # List the tags for the set profile
+        SimpleMonetaryTracker view [-E|-I] [<tag>...]           # View the transaction records for a profile based on optional filters
+        SimpleMonetaryTracker (<amount>) (-E|-I) (<tag>) [<description>]        # Add a transaction to a profile by mentioning the amount*, E/I*,Tag* and Description [* Required]
 
 Note: _-I_ denotes Income and _-E_ denotes Expense.
 

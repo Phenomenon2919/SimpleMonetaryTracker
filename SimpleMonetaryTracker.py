@@ -14,6 +14,7 @@ if __name__ == "__main__":
         SimpleMonetaryTracker init (<Profile_name>)
         SimpleMonetaryTracker set (<Profile_name>)
         SimpleMonetaryTracker profiles
+        SimpleMonetaryTracker tags
         SimpleMonetaryTracker view [-E|-I] [<tag>...]
         SimpleMonetaryTracker (<amount>) (-E|-I) (<tag>) [<description>]
 
@@ -34,6 +35,8 @@ if __name__ == "__main__":
         tracker.set(args["<Profile_name>"])
     elif args["profiles"]:
         tracker.profiles()
+    elif args['tags']:
+        tracker.tags()
     elif args["view"]:
         filter = {"tag_list": args["<tag>"]}
         if args["-E"]:

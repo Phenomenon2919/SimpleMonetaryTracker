@@ -119,6 +119,38 @@ class Tracker:
             else:
                 print("{}".format(profile))
 
+    def tags(self):
+        ## Get Current Profile:
+        profile = self.get_profile()
+        if not profile:
+            print("\033[91m[-] User Profile not set. Please set profile.\033[0m")
+            return
+
+        print("\033[93m[/] Current Profile: {}\033[0m".format(profile))
+
+        conn = db.connect(
+            self.source_path + "/.Profiles/{}/transactions.db".format(profile)
+        )
+        cursor = conn.cursor()
+
+        query = """
+            select distinct tag from transactions
+        """
+
+        cursor.execute(query)
+        result = cursor.fetchall()
+        if not result:
+            print("\033[93m[/] No tags for Profile {} yet!\033[0m".format(profile))
+            return
+        ## Printing table
+        print(
+            tabulate(
+                result,
+                headers=["Tags"],
+                tablefmt="pretty",
+            )
+        )
+
     def get_profile(self):
         try:
             with open(self.source_path + "/.TrackerConfig.yaml", "r") as f:
@@ -178,7 +210,9 @@ class Tracker:
         conn.commit()
 
         print(
-            "\033[92m[+] Transaction has been loged for user {}.\033[0m".format(profile)
+            "\033[92m[+] Transaction has been logged for user {}.\033[0m".format(
+                profile
+            )
         )
 
     def view(self, filter):
